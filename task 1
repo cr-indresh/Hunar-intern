@@ -1,0 +1,14 @@
+import random
+
+# Define characters to be used in CAPTCHA
+characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+# Generate CAPTCHA
+captcha = ""
+
+# Loop to generate 5-character CAPTCHA
+for _ in range(5):  
+    captcha += random.choice(characters)
+
+# Print the generated CAPTCHA
+print("Generated CAPTCHA:", captcha)
