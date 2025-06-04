@@ -1,0 +1,62 @@
+def run_quiz():
+    questions = [
+        {
+            "question": "What is the capital of France?",
+            "options": ["A) Paris", "B) Rome", "C) Madrid", "D) Berlin"],
+            "answer": "A"
+        },
+        {
+            "question": "Who wrote 'Romeo and Juliet'?",
+            "options": ["A) Charles Dickens", "B) William Shakespeare", "C) J.K. Rowling", "D) Mark Twain"],
+            "answer": "B"
+        },
+        {
+            "question": "What planet is known as the Red Planet?",
+            "options": ["A) Earth", "B) Venus", "C) Mars", "D) Jupiter"],
+            "answer": "C"
+        },
+        {
+            "question": "What is the largest mammal?",
+            "options": ["A) Elephant", "B) Blue Whale", "C) Giraffe", "D) Hippopotamus"],
+            "answer": "B"
+        },
+        {
+            "question": "Which language is primarily spoken in Brazil?",
+            "options": ["A) Spanish", "B) Portuguese", "C) French", "D) Italian"],
+            "answer": "B"
+        }
+    ]
+
+    score = 0
+
+    for idx, q in enumerate(questions, start=1):
+        print(f"\nQuestion {idx}: {q['question']}")
+        for opt in q['options']:
+            print(opt)
+        user_answer = input("Your answer (A/B/C/D): ").strip().upper()
+
+        if user_answer == q['answer']:
+            print("✅ Correct!")
+            score += 1
+        else:
+            print(f"❌ Incorrect. The correct answer was {q['answer']}.")
+
+        print(f"Current Score: {score}/{idx}")
+
+    # End of Quiz
+    print("\n🎉 Quiz Complete!")
+    print(f"Your Final Score: {score}/{len(questions)}")
+
+    # Performance Message
+    if score == len(questions):
+        print("🏆 Excellent! You got a perfect score!")
+    elif score >= len(questions) * 0.7:
+        print("👍 Great job! You did very well.")
+    elif score >= len(questions) * 0.4:
+        print("🙂 Not bad, but there's room to improve.")
+    else:
+        print("😕 Better luck next time. Keep learning!")
+
+# Run the quiz
+if __name__ == "__main__":
+    run_quiz()
